@@ -1,0 +1,225 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen:wght@400;700&display=swap'); /*fuente importado para el h3 */
+
+body {
+    background-color: rgb(0, 0, 0); /*fondo negro */
+}
+
+h3 {
+    color: rgb(255, 255, 255);
+    font-family: "Silkscreen", sans-serif;
+}
+
+hr {
+    color: white;
+    margin-bottom: 80px;                    /*lo uso para hacer mas grande la parte de abajo */
+}
+
+h4 {
+    color: white;
+    padding-left: 20px;                     /*espacio para el lado izquierdo dentro del h4 */
+}
+
+p {
+    color: rgb(111, 110, 110);
+    padding-left: 20px;                     /*espacio al lado izquierdo dentro del p */
+}
+
+/*uso esto para cambiar el boton de hamburguesa que sale cuando se ve desde un celular*/
+.navbar-toggler-icon {
+    filter: invert(1) !important; /* invierte el color */
+}
+
+/*botones decorados*/
+.botones {
+    text-decoration: none;
+    color: #333;
+    padding: 5px 15px;                      /* Espacio interno del botón */
+    border-radius: 20px;
+    transition: 0.5s;                       /*me sirve para darle un tiempo al cambio que tendra el boton cuando paso el mouse por encima*/
+    margin-left: 30px;                      /* Margen izquierdo*/
+    border: 2px solid transparent;          /*borde invisible para que no me haga saltos cuando empiece el hover*/
+}
+
+/* Efecto visual al pasar el mouse por los botones */
+.botones:hover {
+    background-color: #222222;                                 /*se vueleve de color gris*/
+    border-color: #ffffff;                                     /*para el borde blanco que complementa al efecto de iluminación*/
+    box-shadow: 0 0 5px #ffffff, 0 0 15px #ffffff;           /*sombras para dar efecto de neon*/
+}
+
+/*para dar espacio de margen*/
+.espacio {
+    margin: 35px;                 /* Margen en todos los lados */
+}
+
+/*posicion de las primeras imagenes de la pagina de inicio*/
+.galeria {
+    display: flex;                /*aplica diseño para todas las imagenes*/
+    justify-content: center;      /*centra el contenido horizontalmente*/
+    align-items: center;          /* Centra verticalmente */
+}
+
+/* Estilos para las imágenes dentro de la galería */
+.galeria img {
+    object-fit: cover;            /* Ajusta imagen sin deformar */
+    width: 17%;                   /* Ancho inicial de las fotos */
+    height: 300px;                /* Altura fija para que no se deforme el carrusel*/
+    transition: all ease-in-out 0.5s;
+}
+
+/*efecto que tendra el carrusel*/
+.galeria img:hover {
+    width: 25%;                   /* hace que la imagen se expanda al pasar el mouse por encima*/
+}
+
+/* Efecto para agrandar ligeramente*/
+.sizemás {
+    transition: 0.2s ease-in-out;
+}
+
+.sizemás:hover {
+    transform: scale(1.03);      /*aumenta el tamaño al pasar el mouse*/
+}
+
+/*contenedores*/
+.prin {
+    display: flex;               /*flexbox para organizar los divs internos*/
+    flex-wrap: wrap;             /*permite que los elementos bajen de línea */
+    gap: 30px;
+    justify-content: center;     /*Centra los divs*/
+    margin: 20px;
+}
+
+/* Estilo de las cards*/
+.celda {
+    border: 1px solid white;
+    border-radius: 30px;
+    padding: 20px; 
+    width: 100%;                       /*Ancho para celular*/
+    max-width: 350px;                  /*limite de ancho máximo */
+    display: flex;                     /*Flexbox interno */
+    align-items: center;               /*Centrado vertical interno */
+    justify-content: center;           /*Centrado horizontal interno */
+    overflow: hidden;                  /*oculta el contenido que se quiere salir del borde*/
+    box-sizing: border-box;            /*Incluye padding y borde en el ancho total */
+}
+
+/* Imágenes dentro de las celdas */
+.celda img {
+    width: 100%;             /* Ocupa todo el ancho disponible */
+    height: 250px;           /* Altura fija para uniformidad */
+    object-fit: cover;       /* Recorta imagen para llenar el contenedor */
+    display: block;          /* Elimina espacios vacíos inferiores */
+    border-radius: 15px;     /* Redondeo de esquinas de la imagen */
+}
+
+/* Contenedor interno de la celda */
+.contenido-celda {
+    display: flex;
+    flex-direction: column; /* Alinea imagen arriba y texto abajo */
+    align-items: center;    /* Centra ambos horizontalmente */
+    width: 100%;
+}
+
+/* Ajuste de la imagen */
+.contenido-celda img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+}
+
+/* Contenedor del texto */
+.texto-inferior {
+    width: 100%;
+    margin-top: 15px;      /* Espacio entre la imagen y el texto */
+    text-align: center;    /* Centra el texto */
+}
+
+/* Estilo de <p> esta vez aplicando el !important dentro de css y ya no dentro de html */
+.texto-inferior p {
+    color: white !important;
+    font-family: "Silkscreen", sans-serif !important;
+    font-size: 1rem;
+    margin: 0;
+    padding: 0 !important; /* IMPORTANTE: Esto quita los 20px de la izquierda */
+    letter-spacing: 2px;
+}
+
+/* Efecto hover opcional para toda la celda */
+.celda:hover {
+    transform: scale(1.02);
+    transition: 0.3s ease;
+    border-color: #ffffff;
+    box-shadow: 0 0 10px rgba(255,255,255,0.5);
+}
+
+/* Adaptación para pantallas de escritorio (768px o más) */
+@media (min-width: 768px) {
+    .prin {
+        gap: 150px;          /* Aumenta mucho el espacio entre celdas */
+        margin: 35px;        /* Margen externo mayor */
+    }
+    
+    .celda {
+        width: 500px;        /* Celdas más anchas en PC */
+    }
+}
+
+.pie {
+    display: flex;
+    flex-direction: column;  /*una columna debajo de otra*/
+    align-items: center;     /* Centra todos los divs*/
+    gap: 20px;
+    padding: 40px 10px;
+    background-color: rgb(22, 22, 22);
+}
+
+.cont-pie {
+    width: 90%;             /* Casi todo el ancho del celular */
+    max-width: 500px;       /*pero se aplicara un maximo para que no se vea deforme*/
+    padding: 20px;
+}
+
+.info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: left;
+}
+
+
+/*esto se aplicara cuando la pantalla sea la de una pc*/
+@media (min-width: 768px) {
+    .pie {
+        flex-direction: row;     /*cambia de vertical a horizontal*/
+        justify-content: center; /*centra las 3 columnas*/
+        align-items: stretch;    /* hace que todas tengan la misma altura, aplique primero auto pero se iba uno abajo y otro arriba*/
+        gap: 30px;
+    }
+
+    .cont-pie {
+        flex: auto;              /* Se reparten el ancho disponible equitativamente */
+        max-width: 900px;        /* para que no se estiren demasiado*/
+    }
+}
+
+.ult-part {
+    width: 100% !important; /* Fuerza a que ocupe toda la fila y empuje a las celdas arriba */
+    text-align: center;    /* Centra el texto "Level Bronco" */
+    margin-top: 50px;      /* Espacio de separación con las celdas de arriba */
+}
+
+.ult-part hr {
+    border: none;
+    border-top: 1px solid white; /* Línea blanca sutil */
+    width: 80%;            /* No ocupa todo el ancho para que se vea más elegante */
+    margin: 0 auto 20px;   /* Centra la línea y le da espacio abajo */
+}
+
+.ult-part h3 {
+    font-size: 1.5rem;
+    letter-spacing: 2px;   /* Un poco de espacio entre letras para el estilo gamer */
+}
